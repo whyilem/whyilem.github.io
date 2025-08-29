@@ -166,5 +166,71 @@
             <span class="line-bottom"></span>
         </a>
     </header>
+    <p>Le jeu est en construction de la démo, bientôt téléchargeable par un lien !</p>
+    <button class="fun-button" style="
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s;"
+onmouseover="this.style.transform='rotate(-5deg) scale(1.1)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.4)';"
+onmouseout="this.style.transform='rotate(0deg) scale(1)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.3)';"
+onmousedown="this.style.transform='rotate(5deg) scale(0.9)';"
+onmouseup="this.style.transform='rotate(-5deg) scale(1.1)';"
+onclick="
+    if(!this.clickCount) this.clickCount=0;
+    if(!this.palier) this.palier=0;
+    this.clickCount++;
+    this.style.top = Math.floor(Math.random() * (window.innerHeight-200)) + 100 +'px';
+    this.style.left = Math.floor(Math.random() * (window.innerWidth - 150)) + 'px';
+    if(this.clickCount == 10){
+        this.palier=this.clickCount
+        alert('STOP');
+    }
+    if(this.clickCount == 11){
+        this.palier=this.clickCount
+        alert('J\'ai dit STOP');
+    }
+    if(this.clickCount == 13){
+        this.palier=this.clickCount
+        alert('ARRETE !');
+    }
+    if(this.clickCount == 14){
+        this.palier=this.clickCount
+        alert('t\'est sourd ou quoi, j\'ai dit STOP !');
+    }
+    if(this.clickCount == 24){
+        this.palier=this.clickCount
+        alert('je vais m\'énerver ...');
+    }
+    if(this.clickCount == 44){
+        this.palier=this.clickCount
+        alert('A OUAI TU VEUX VRAIMENT CONTINUER ???');
+    }
+    if(this.clickCount == 45){
+        this.palier=this.clickCount
+        var choix =confirm('Tres bien... si tu veux jouer; on va jouer...\n\n clique sur ok');
+        if (choix){
+            var img = document.createElement('img');
+            img.src = 'img/Sans_titre.jpg';
+            img.style.position = 'fixed';
+            img.style.top = '0';
+            img.style.left = '0';
+            img.style.width = '100vw';
+            img.style.height = '100vh';
+            img.style.objectFit = 'cover';
+            img.style.zIndex = '9999'; 
+            document.body.appendChild(img);}else{this.style.display = 'none';}
+    }
+  "
+>Bientot ICI !!</button>
 </body>
 </html>
